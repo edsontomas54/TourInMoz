@@ -1,0 +1,113 @@
+:root{
+    --main-bg-color: #b33636;
+    --black-color:#222;
+    --white-color:#fff;
+    --light-black-color:#777;
+    --dark-bg-color:rgb(0,0,0,.7);
+    --light-bg-color:#eee;
+    --border:.1rem solid var(--black-color);
+    --box-shadow:0 .5rem 1rem 0 rgba(0,0,0,.1);
+    --text-shadow:0 1.5rem 3rem 0 rgba(0,0,0,.3);
+
+}
+
+
+.about{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 3rem;
+}
+.about .image{
+    flex: 1 1 41rem;
+}
+.about .image img{
+    width: 100%;
+}
+.about .content{
+    flex: 1 1 41rem;
+    text-align: center;
+}
+
+.about .content h3{
+    font-size: 3rem;
+    color: var(--black-color);
+}
+
+.about .content p{
+    font-size: 1.5rem;
+    color: var(--light-black-color);
+    line-height: 2;
+    padding: 1rem;
+}
+.about .content .icons-container{
+    margin-top: 2rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    align-items: flex-end;
+}
+.about .content .icons-container .icons{
+background: var(--light-black-color);
+padding: 2rem;
+flex: 1 1 16rem;
+}
+.about .content .icons-container .icons i{
+    font-size: 4rem;
+    margin-bottom: 2rem;
+    color: var(--main-bg-color);
+}
+.about .content .icons-container .icons span{
+    font-size: 1.5rem;
+    color: var(--light-bg-color);
+    display: block;
+}
+
+.review{
+    background:var(--light-bg-color);
+    
+}
+.review .slide{
+    padding: 2rem;
+    border: var(--border);
+    background: var(--white-color);
+    text-align: center;
+    box-shadow: var(--box-shadow);
+    user-select: none;
+}
+.review .slide .stars{
+    margin-bottom: 1rem;
+}
+
+.review .slide .stars{
+    font-size: 1.7rem;
+    color: var(--main-bg-color);
+}
+
+.review .slide h3{
+    font-size: 2rem;
+    color: var(--black-color);
+
+    padding: 1rem 0;
+
+}
+.review .slide p{
+    font-size: 1.5rem;
+    color: var(--light-black-color);
+    line-height: 2;
+    padding: 1rem 0;
+
+}
+
+.review .slide span{
+    font-size: 1.5rem;
+    color: var(--main-bg-color);
+    display: block;
+   
+}
+.review .slide img{
+   height: 7rem;
+    width: 7rem;
+    border-radius: 50%;
+    margin-top: 1rem;
+}

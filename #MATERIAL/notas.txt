@@ -1,0 +1,227 @@
+
+   /*
+        A BASE DE DADOS DEVE FAZER:
+        1. ligar
+        2. comunicar
+        3. fechar
+  */
+
+/*
+CRUD
+create -INSERT
+read   -SELECT
+update -UPDATE
+Delete -DELETE
+
+define('MYSQL_SERVER',     'localhost');
+define('MYSQL_DATABASE',   'php_store');
+define('MYSQL_USER',       'user_php_store');
+define('MYSQL_PASS',       '');
+define('MYSQL_CHARST',     'utf8');
+
+*/
+
+
+ //VERIFICA SE É UMA INSTRUÇÃO SELECT
+      if(!preg_match("/SELECT/i", $sql)){//o preg_match verifica que de facto é selelect ou não... o /SELECT/i é qualquer que seja se é maisculo ou menusculo
+      throw new Exception("Base de dados - não é uma instrução SELECT");
+      }  
+
+
+
+   /*
+        A BASE DE DADOS DEVE FAZER:
+        1. ligar
+        2. comunicar
+        3. fechar
+  */
+
+/*
+CRUD
+create -INSERT
+read   -SELECT
+update -UPDATE
+Delete -DELETE
+
+define('MYSQL_SERVER',     'localhost');
+define('MYSQL_DATABASE',   'php_store');
+define('MYSQL_USER',       'user_php_store');
+define('MYSQL_PASS',       '');
+define('MYSQL_CHARST',     'utf8');
+
+*/  
+
+
+$bd->statement("TRUNCATE clientes"); para eliminar elementos da base de bd...
+
+ucfirst ele coloca a primeira letra maior.// ja que o main, no controlador ele o main esta em na primeira letra maior.
+
+MVC
+
+MODEL--------Base de dados!
+VIEW------Layout, + HTML +CSS +....
+CONTROLLER -----Regras de negócios...
+
+<h1><?= $titulos?></h1> é o mesmo  que fazer:
+<?php echo $titulos; >
+
+
+
+============================================trying
+
+<h1><?= $titulo?></h1>
+
+<ul>
+
+<?php foreach($clientes as $cliente):?>
+    <li>
+        <?= $cliente ?>
+    </li>
+<?php endforeach; ?>
+</ul>
+
+vamos usar bootstrap e fonte-awosome!
+
+-------------------+
+inprimir os clientes numa lista!
+
+<div>
+
+    <ul>
+    <?php foreach($clientes as $nome): ?>
+        <li><?= $nome ?></li> 
+        <?php endforeach;?>
+    </ul>
+
+</div>
+
+REMOVEMOVEMOS A PAGINA INICIAL!....
+
+CREAÇÃO DA TABELA CLIENTE===============
+
+
+
+ALINHAMENTO DOS DADOS DA TABELA CLIENTE =======
+
+
+	id_cliente
+	email 
+	senha
+	nome_completoL
+	moradaL
+	cidade 
+	telefone 
+	purl
+	activo	
+	updated_at
+	deleted_at
+====================================INFORMAÇÃO DO REGISTER
+
+Array
+(
+    [text_email] => teste@teste.com
+    [text_senha_1] => teste
+    [text_senha_2] => teste
+    [text_nome_completo] => Edson Tomas
+    [text_morada] => Hulene-B
+    [text_cidade] => Mozambique
+    [text_telefone] => 842236192
+)
+
+
+====CLIENTE
+
+CREATE TABLE O_INCREMENT,
+	 COLLATE 'utf8mb4_general_ci',
+	L COLLATE 'utf8mb4_general_ci',
+	L COLLATE 'utf8mb4_general_ci',
+	L COLLATE 'utf8mb4_general_ci',
+	 COLLATE 'utf8mb4_general_ci',
+	 COLLATE 'utf8mb4_general_ci',
+	 COLLATE 'utf8mb4_general_ci',
+	_timestamp(),
+	_timestamp(),
+	PRIMARY KEY (b4_general_ci'
+ENGINE=InnoDB
+AUTO_INCREMENT=4
+;
+
+
+=====================REGISTO DE CLIENTE NA BASE DE DADOS!.
+
+/*
+1.verificar se a password esta coincidente(senha 1== senha 2)
+2.base dados  ja existe outra conta com o mesmo email?
+
+3.registo
+--criar um purl
+--guardar dados na tabela clientes
+--enviar um email com o purl para o cliente
+--Apresentar uma mesagem de que deve apresentar uma validacao do email do cliete
+
+*/
+
+
+==PURL-> personal url.
+
+==adicionar o PHPMAILER  ao nosso projeto
+
+permite enviar emails a partir php
+
+para enviar o email precisamos de uma conta real de email
+criar uma conta gmail + configurar a conta para enviar os emails
+
+Etapa 1: verificar se o IMAP está ativado,
+Abra o Gmail no computador.
+No canto superior direito, clique em Configurações Configurações e Ver todas as configurações.
+Clique na guia Encaminhamento e POP/IMAP.
+Na seção "Acesso IMAP", selecione Ativar IMAP.
+Clique em Salvar alterações.
+
+
+
+Etapa 2: alterar o SMTP e outras configurações no seu cliente de e-mail
+
+Servidor de recebimento de e-mails (IMAP)	
+imap.gmail.com
+
+Requer SSL: Sim
+
+Porta: 993
+
+Servidor de envio de e-mails (SMTP)	
+smtp.gmail.com
+
+Requer SSL: Sim
+
+Requer TLS: Sim (se disponível)
+
+Requer autenticação: Sim
+
+Porta para SSL: 465
+
+Porta para TLS/STARTTLS: 587
+
+Nome completo ou Nome de exibição	Seu nome
+Nome da conta, Nome do usuário ou Endereço de e-mail	Seu endereço de e-mail completo
+Senha	Sua senha do Gmail
+
+
+
+    //validação do cliente, usando o purl.
+
+
+      /*  
+   2.base dados=>  ja existe outra conta com o mesmo email?
+
+   3.registo
+   --criar um purl
+   --guardar dados na tabela clientes
+   --enviar um email com o purl para o cliente
+   --Apresentar uma mesagem de que deve apresentar uma validacao do email do cliete
+
+   */
+
+    purl =cmvHdB5bO3eO
+  http://localhost/Aulas/PhpStore/public/?a=confirmar_email&purl=cmvHdB5bO3eO
+   

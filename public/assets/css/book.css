@@ -1,0 +1,61 @@
+:root{
+    --main-bg-color: #b33636;
+    --black-color:#222;
+    --white-color:#fff;
+    --light-black-color:#777;
+    --dark-bg-color:rgb(0,0,0,.7);
+    --light-bg-color:#eee;
+    --border:.1rem solid var(--black-color);
+    --box-shadow:0 .5rem 1rem 0 rgba(0,0,0,.1);
+    --text-shadow:0 1.5rem 3rem 0 rgba(0,0,0,.3);
+
+}
+
+
+
+
+
+.booking-container{
+    padding: 2rem;
+    background: var(--light-bg-color);
+}
+
+.booking-container .book-form .flex-inputs{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+
+.booking-container .book-form .flex-inputs .inputBox{
+    flex: 1 1 41rem;
+}
+
+.booking-container .book-form .flex-inputs .inputBox input{
+    width: 100%;
+    padding: 1.2rem 1.4rem;
+    font-size: 1.6rem;
+    color: var(--light-black-color);
+    text-transform: none;
+    margin-top: 1.5rem;
+    border: var(--border);
+}
+
+.booking-container .book-form .flex-inputs .inputBox input:focus{
+    background: var(--black-color);
+    color: var(--white-color);
+}
+
+.booking-container .book-form .flex-inputs .inputBox input:focus::placeholder{
+  
+    color: var(--light-bg-color);
+}
+
+.booking-container .book-form .flex-inputs .inputBox span{
+    font-size: 1.6rem;
+    color: var(--black-color);
+}
+
+.booking-container .book-form .btn{
+    margin-top: 5rem;
+    
+}

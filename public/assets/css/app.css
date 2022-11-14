@@ -1,0 +1,21 @@
+/*App.css */
+
+.navStyle{
+    background-color: rgb(154, 171, 194);
+    color: #000;
+}
+
+.footerStyle{
+    background-color: rgb(60, 74, 82) !important;
+    color: #fff !important;
+}
+.nav-intem{
+    text-decoration: none;
+    color: #fff;
+    margin: 0 10px;
+}
+
+.nav-intem:hover{
+    text-decoration: underline;
+    color: #fff;
+}
