@@ -64,15 +64,5 @@ class Store{
         }
         die( "<br>veja!"  );
     }
-
-
-
-
-
-
-
-
-
-
 }
 

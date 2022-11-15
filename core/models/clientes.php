@@ -17,7 +17,7 @@ class Clientes
          ':e' => strtolower(trim($email)) //email nao pode conter letras menusculas! 'strtolower'
       ];
 
-      $resultados = $bd->select("SELECT email FROM clientes WHERE email= :e", $parametros);
+      $resultados = $bd->select("SELECT email FROM users WHERE email= :e", $parametros);
 
       // se o cliente ja existe...
       if (count($resultados) != 0) {
@@ -26,7 +26,7 @@ class Clientes
          return false;
       }
    }
-   //=======================================REGISTAR CLIENTES====================================
+   //=======================================REGISTAR users====================================
    public function registar_cliente()
    {
       //registao novo cliente na base de dados
@@ -49,7 +49,7 @@ class Clientes
       ];
 
       $bd->insert("
-    INSERT INTO clientes VALUES(
+    INSERT INTO users VALUES(
     0,
     :email,
     :senha,
@@ -75,7 +75,7 @@ class Clientes
       $parametros = [
          ':purl' => $purl,
       ];
-      $resultados = $bd->select("SELECT* FROM clientes WHERE purl= :purl", $parametros);
+      $resultados = $bd->select("SELECT* FROM users WHERE purl= :purl", $parametros);
 
       //Verifica se foi encontrado o cliente.
       if (count($resultados) !=1) {
@@ -90,7 +90,7 @@ class Clientes
       $parametros = [
          ':id_cliente' => $id_cliente
       ];
-      $bd->update("UPDATE clientes SET purl=NULL, activo='1', updated_at=NOW() WHERE id_cliente=:id_cliente", $parametros);
+      $bd->update("UPDATE users SET purl=NULL, activo='1', updated_at=NOW() WHERE id_cliente=:id_cliente", $parametros);
       return true;
    }
 
@@ -104,7 +104,7 @@ class Clientes
       $bd = new Database();
 
       $resultados = $bd->select("
-      SELECT * FROM clientes
+      SELECT * FROM users
        WHERE email = :usuario
         AND activo=1 
         AND deleted_at IS NULL

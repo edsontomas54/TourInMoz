@@ -55,8 +55,8 @@ class EnviarEmail
             $mail->Subject = APP_NAME . '-' . 'Confirmção de Email';
 
             //MESSAGEM
-            $html='<p>Seja bem vindo á nossa Loja '. APP_NAME . '</p>';
-            $html .='<p>Para poder entrar na nossa loja , necessita confirmar o seu Email.</p>';
+            $html='<p>Seja bem vindo á nossa Pagina '. APP_NAME . '</p>';
+            $html .='<p>Para poder entrar na nossa Pagina, necessita confirmar o seu Email.</p>';
             $html .='<p>Para Confirmar o email , click no link a baixo:</p>';
             $html .='<p> <a href="'.$link.'">Confirmar Email</a></p>';
             $html .='<p><i>'. APP_NAME .'</i></p>';

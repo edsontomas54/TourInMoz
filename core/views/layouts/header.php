@@ -9,7 +9,7 @@
         <div class="col-6 p-3">
             <a href="?a=inicio"><h3><?= APP_NAME?></h3></a>
         </div>
-        <div class="col-6 text-end p-3">
+        <div class="col-6 text-xl-end p-5">
             <a href="?a=inicio "class="nav-intem">HOME</a>
             <a href="?a=book">Book</a>
             <a href="?a=package" class="nav-intem">Package</a>

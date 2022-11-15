@@ -11,7 +11,7 @@
 
     <h1 class="head-title">Garanta a sua Viajem!</h1>
 
-    <form action="book_form.php" method="post" class="book-form">
+    <form action="?a=book" method="post" class="book-form">
 
         <div class="flex-inputs">
 
@@ -32,7 +32,7 @@
 
             <div class="inputBox">
                 <span>indereço :</span>
-                <input type="text" name="indereco" placeholder="Digite o seu indereco" value="<?php echo $indereco; ?>">
+                <input type="text" name="indereco" placeholder="Digite o seu indereco" value="">
             </div>
 
             <div class="inputBox">

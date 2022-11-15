@@ -54,6 +54,27 @@ section{
    
 
 }
+.navStyle{
+    background-color: var(--main-bg-color);
+    color: #000;
+   
+}
+
+.nav-intem:hover{
+    text-decoration: underline;
+    color: #fff;
+}
+
+ .footerStyle{
+    background-color: rgb(60, 74, 82) !important;
+    color: #fff !important;
+} 
+.nav-intem{
+    text-decoration: none;
+    color: #fff;
+    margin: 0 10px;
+}
+
 
 .header
 {

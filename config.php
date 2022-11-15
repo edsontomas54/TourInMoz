@@ -7,13 +7,13 @@ define('APP_VERSION',    '2.1.0');
 
 
 //URL
-define('BASE_URL'   ,'http://localhost/Aulas/PhpStore/public/');
+define('BASE_URL'   ,'http://localhost/Aulas/MozTuor/TourInMoz/public/');
 
 //MYSQL
 define('MYSQL_SERVER',     'localhost');
-define('MYSQL_DATABASE',   'php_store');
-define('MYSQL_USER',       'user_php_store');
-define('MYSQL_PASS',       '4oC7b27E4A6u');
+define('MYSQL_DATABASE',   'book_db');
+define('MYSQL_USER',       'user_php_TourInMoz');
+define('MYSQL_PASS',       '168e6upuDuRA');
 define('MYSQL_CHARST',     'utf8');
 
 //variaveis de email sender...

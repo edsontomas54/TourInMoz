@@ -6,6 +6,7 @@ use core\classes\Database;
 use core\classes\Store;
 use core\models\Clientes;
 use core\classes\enviarEmail;
+use core\classes\Trip;
 use core\models\produtos;
 
 class Main
@@ -31,13 +32,35 @@ class Main
    //==============================================================
    public function book()
    {
+      // if (Store::clienteLogado()) {
+      //    Store::Layout([
+      //       'layouts/html_header',
+      //       'layouts/header',
+      //       'book',
+      //       'layouts/footer',
+      //       'layouts/html_footer'
+      //    ]);
+      //    return;
+      // }else{
+      //    echo "Faça o login para poder registar-se";
+      // }
+
       Store::Layout([
-         'layouts/html_header',
-         'layouts/header',
-         'book',
-         'layouts/footer',
-         'layouts/html_footer'
-      ]);
+                'layouts/html_header',
+                'layouts/header',
+                'book',
+                'layouts/footer',
+                'layouts/html_footer'
+             ]);
+
+             if(Store::clienteLogado()){
+               Trip::regist_trip_client();
+             }else{
+               echo "Faça o login para poder registar-se";
+             }
+
+     
+
    }
 
      //==============================================================
