@@ -11,7 +11,7 @@
 
     <h1 class="head-title">Garanta a sua Viajem!</h1>
 
-    <form action="?a=book" method="post" class="book-form">
+    <form action="?a=regist_trip" method="post" class="book-form">
 
         <div class="flex-inputs">
 

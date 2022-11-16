@@ -46,10 +46,10 @@ section{
 }
 
 .head-title{
-    text-align: center;
-    margin-bottom: 3rem;
-    font-size: 4.45rem;
-    text-transform: uppercase;
+    text-align: center !important;
+    margin-bottom: 3rem !important;
+    font-size: 4.45rem !important;
+    text-transform: uppercase !important;
     color: var(--black-color);
    
 

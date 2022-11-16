@@ -6,7 +6,7 @@ class Trip{
 
 
     public function regist_trip_client(){
-
+     
         $bd= new Database();
 
         $paramets=[
@@ -20,7 +20,7 @@ class Trip{
             ':chegada' => (trim($_POST['chegada'])),
            
         ];
-
+    
         $bd->insert("
         INSERT INTO form_book  values(
         0,
@@ -29,17 +29,12 @@ class Trip{
         :telefone,
         :indereco,
         :locali,
-        :visititante,
-        :saida,
-        :chegada
-
+        :visitante,
+        :chegada,
+        :saida
         )
         ",$paramets);
         
-        
-
+        return;
     }
-
-
-
 }

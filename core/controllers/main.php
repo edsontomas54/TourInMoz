@@ -32,36 +32,47 @@ class Main
    //==============================================================
    public function book()
    {
-      // if (Store::clienteLogado()) {
-      //    Store::Layout([
-      //       'layouts/html_header',
-      //       'layouts/header',
-      //       'book',
-      //       'layouts/footer',
-      //       'layouts/html_footer'
-      //    ]);
-      //    return;
-      // }else{
-      //    echo "Faça o login para poder registar-se";
-      // }
-
       Store::Layout([
                 'layouts/html_header',
                 'layouts/header',
                 'book',
                 'layouts/footer',
-                'layouts/html_footer'
+                'layouts/html_footer',
              ]);
-
-             if(Store::clienteLogado()){
-               Trip::regist_trip_client();
-             }else{
-               echo "Faça o login para poder registar-se";
-             }
-
-     
-
    }
+
+    //==============================================================
+    public function not_login_message()
+    {
+       Store::Layout([
+                 'layouts/html_header',
+                 'layouts/header',
+                 'not_login_message',
+                 'layouts/footer',
+                 'layouts/html_footer',
+              ]);
+    }
+
+    //==============================================================
+    public function regist_trip()
+    {
+         //Verifica se houve submisaão de um formulario
+         if ($_SERVER['REQUEST_METHOD'] != 'POST') {
+            $this->book();
+            return;
+         }
+
+      if(Store::clienteLogado()){
+
+         $regist = new Trip();
+         $regist->regist_trip_client()==1;
+         return $this->book();
+      }else{
+         return $this->not_login_message();
+      }
+    
+
+    }
 
      //==============================================================
      public function package()

@@ -64,7 +64,7 @@ class Clientes
     NULL
     )
 
- ", $parametros);
+   ", $parametros);
       //Retorna o purl criado
       return $purl;
    }

@@ -11,7 +11,7 @@ $rotas=[
     'novo_cliente'=>'main@novo_cliente',
     'criar_cliente'=> 'main@criar_cliente',
     'confirmar_email'=> 'main@confirmar_email',
-    // 'regist_trip'=>           'main@book_regist_trip',     
+    'regist_trip'=>           'main@regist_trip',     
     //========login=============================
     'login'=>            'main@login',
     'login_submit'=>      'main@login_submit',
