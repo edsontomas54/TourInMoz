@@ -6,6 +6,7 @@
 
  <!----------------------Script-File---------------------------------------------->
  <script src="assets/js/scripts.js"></script>
+ <script src="assets/js/jquery-3.6.1.min.map.js"></script>
 
  <script>
     var swiper = new Swiper(".home-slider", {
@@ -16,6 +17,7 @@
    },
 });
 
+$('#test').toggle("50000");
  </script>
 </body>
 </html>
