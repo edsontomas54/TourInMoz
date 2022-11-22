@@ -16,8 +16,25 @@ $rotas=[
     'login'=>            'main@login',
     'login_submit'=>      'main@login_submit',
     'logout'=>              'main@logout',
+    //========login======End=======================//
+     //========Perfil============================
+     'perfil'   =>  'main@perfil',
+     'perfil_user' => 'main@perfil_user',
+     //========Perfil============================
 
-    
+     //admin painel=================================
+     'admin_painel'=>              'AdminUsersController@admin',
+     'admin_regist'=>'AdminUsersController@registAdminUser',
+     'create_admin_user'=>'AdminUsersController@create_admin_user',
+     //login
+     'login_admin'=>'AdminUsersController@login_admin',
+     'login_submit_admin'=>'AdminUsersController@login_submit_admin',
+     'logout_admin'=>              'AdminUsersController@logout_admin',
+    //editing
+
+    'edit_admin' => 'AdminUsersController@edit_admin',
+    'update_admin' => 'AdminUsersController@update_admin',
+
 ];
 
 //Define acão por defeito/default

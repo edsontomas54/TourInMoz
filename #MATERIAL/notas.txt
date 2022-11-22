@@ -13,18 +13,18 @@ read   -SELECT
 update -UPDATE
 Delete -DELETE
 
-define('MYSQL_SERVER',     'localhost');
-define('MYSQL_DATABASE',   'php_store');
-define('MYSQL_USER',       'user_php_store');
-define('MYSQL_PASS',       '');
-define('MYSQL_CHARST',     'utf8');
+define('MYSQL_SERVE
+define('MYSQL_DATAB
+define('MYSQL_USER',    
+define('MY
+define('MYSQL_
 
 */
 
 
  //VERIFICA SE É UMA INSTRUÇÃO SELECT
-      if(!preg_match("/SELECT/i", $sql)){//o preg_match verifica que de facto é selelect ou não... o /SELECT/i é qualquer que seja se é maisculo ou menusculo
-      throw new Exception("Base de dados - não é uma instrução SELECT");
+      if(!preg_match("/SELECT/i", usent($sql)){//o preg_match verifica que de facto é selelect ou não... o /);SELECT/i é qualquer que seja se é maisculo ou menusculo
+      throw new Exception("Base de dados - não é um
       }  
 
 
@@ -43,16 +43,16 @@ read   -SELECT
 update -UPDATE
 Delete -DELETE
 
-define('MYSQL_SERVER',     'localhost');
-define('MYSQL_DATABASE',   'php_store');
-define('MYSQL_USER',       'user_php_store');
-define('MYSQL_PASS',       '');
-define('MYSQL_CHARST',     'utf8');
+define('MYSQL_SERVE
+define('MYSQL_DATAB
+define('MYSQL_USER',    
+define('MY
+define('MYSQL_
 
 */  
 
 
-$bd->statement("TRUNCATE clientes"); para eliminar elementos da base de bd...
+usent($bd->statement( para eliminar elementos da base de bd...);
 
 ucfirst ele coloca a primeira letra maior.// ja que o main, no controlador ele o main esta em na primeira letra maior.
 
@@ -62,22 +62,20 @@ MODEL--------Base de dados!
 VIEW------Layout, + HTML +CSS +....
 CONTROLLER -----Regras de negócios...
 
-<h1><?= $titulos?></h1> é o mesmo  que fazer:
-<?php echo $titulos; >
+<h1><?= usent($titulos?></h1> é o mesmo  que fazer: >);
 
 
 
 ============================================trying
 
-<h1><?= $titulo?></h1>
+<h1><?= usent($titulo?></h1>);
 
 <ul>
 
-<?php foreach($clientes as $cliente):?>
+<?php foreach(usent($clientes as usent($cliente):?>);
     <li>
-        <?= $cliente ?>
-    </li>
-<?php endforeach; ?>
+        <?= usent($cliente ?>);
+    </ ?>
 </ul>
 
 vamos usar bootstrap e fonte-awosome!
@@ -88,9 +86,8 @@ inprimir os clientes numa lista!
 <div>
 
     <ul>
-    <?php foreach($clientes as $nome): ?>
-        <li><?= $nome ?></li> 
-        <?php endforeach;?>
+    <?php foreach(usent($clientes as usent($nome): ?>);
+        <li><?= usent($nome ?></li>?>);
     </ul>
 
 </div>
@@ -142,9 +139,7 @@ CREATE TABLE O_INCREMENT,
 	_timestamp(),
 	_timestamp(),
 	PRIMARY KEY (b4_general_ci'
-ENGINE=InnoDB
-AUTO_INCREMENT=4
-;
+ENGINE=Inno
 
 
 =====================REGISTO DE CLIENTE NA BASE DE DADOS!.

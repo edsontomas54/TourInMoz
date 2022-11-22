@@ -6,7 +6,6 @@
 
 use core\classes\Database;
 use core\classes\Store;
-
 session_start();// a sessao estara aberta para todas as pages! 
 
 /*

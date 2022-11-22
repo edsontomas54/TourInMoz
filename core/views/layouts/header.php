@@ -19,29 +19,15 @@ use core\classes\Store;
             se tiver cliente logado, mostre a conta e o logout, se ñao te ver mostre o login e o criar conta!
              -->
             <?php  if(Store::clienteLogado()):?>
-               <i class="fas fa-user mx-2"></i><?= $_SESSION['usuario']  ?>
-
                 <a href="?a=logout">LogOut</a>
-    
+                <a href="?a=perfil">
+                    <img src="assets/images/<?= $_SESSION['image'] ==null ? "avatar.png" : $_SESSION['image']  ?>" width="5%" height="5%" style="border-radius:50%;">
+                </a>
             <?php  else:?>
                 <a href="?a=login" >Login</a>
                 <a href="?a=novo_cliente">Criar conta</a>
             <?php  endif;?>
-</nav>
+    </nav>
 
-<div id="menu-btn" class="fas fa-bars"></div>
-</section>
-
-
-<!-- <section class="header">
-
-    <a href="home.php" class="logo">Moz Tour.</a>
-
-    <nav class="navBar">
-    <a href="home.php" >home</a>
-    <a href="about.php" >Sobre Nos</a>
-    <a href="package.php" >Nossos Pacotes</a>
-    <a href="book.php" >Marque Viajem</a>
- </nav>
- <div id="menu-btn" class="fas fa-bars"></div>
-</section> -->
+    <div id="menu-btn" class="fas fa-bars"></div>
+    </section>

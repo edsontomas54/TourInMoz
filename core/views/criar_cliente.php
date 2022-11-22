@@ -1,64 +1,62 @@
+<main>
+    <h1>Criar Conta!</h1>
 
-    <div class="container col-sm-6 my-5">
-        <h3 class="text-center">Registo de Novo Cliente</h3>
+     <form method="post" class="form_create_client" action="?a=criar_cliente" method="post">
 
-        <form action="?a=criar_cliente" method="post">
-
-            <!-- error -->
-            <?php if (isset($_SESSION['erro'])) : ?>
-                <div class="alert alert-danger alert-dismissible text-center p-2">
+        <!-- error -->
+        <?php if (isset($_SESSION['erro'])) : ?>
+            <div class="alert alert-danger alert-dismissible text-center p-2">
                 <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                 
-                    <?= $_SESSION['erro'] ?>
-                   <?php unset($_SESSION['erro']);?> 
-                </div>
-            <?php endif; ?>
-            <!-- Email -->
-            <div class="my-3">
-                <label>Email</label>
-                <input type="email" name="text_email" placeholder="Email" class="form-control  form-control-lg" required  id="test">
-            </div>
+                <?= $_SESSION['erro'] ?>
+                <?php unset($_SESSION['erro']);?> 
 
-            <!-- Senha_1 -->
-            <div class="my-3">
-                <label>Senha</label>
-                <input type="password" name="text_senha_1" placeholder="Senha" class="form-control  form-control-lg" required>
             </div>
+        <?php endif; ?>
+        <!-- EMAIL -->
+        <div class="inputBox">
+          <label> E-mail </label>
+          <input type="email" name="text_email" placeholder="email@provedor.com" >
+        </div>
 
-            <!-- Senha_1 -->
-            <div class="my-3">
-                <label>Repetir a Senha</label>
-                <input type="password" name="text_senha_2" placeholder="Repetir a Senha" class="form-control  form-control-lg" required>
-            </div>
+         <!-- SENHA -->
+        <div class="inputBox">
+          <label> Senha </label>
+          <input type="password" name="text_senha_1" placeholder="Digite uma senha" >
+        </div>
 
-            <!-- Nome completo -->
-            <div class="my-3">
-                <label>Nome Completo</label>
-                <input type="text" name="text_nome_completo" placeholder="Nome completo" class="form-control  form-control-lg" required>
-            </div>
+        <!-- REPETE SENHA -->
+        <div class="inputBox">
+          <label> Repete Senha </label>
+          <input type="password" name="text_senha_2" placeholder="Repita a senha">
+        </div>
 
-            <!-- Morada -->
-            <div class="my-3">
-                <label>Morada</label>
-                <input type="text" name="text_morada" placeholder="Morada" class="form-control  form-control-lg" required>
-            </div>
+        <!-- NOME COMPLETO -->
+        <div class="inputBox">
+          <label> Nome Completo </label>
+          <input type="text" name="text_nome_completo" placeholder="Digite seu nome">
+        </div>
+    
+        <!-- MORADA-->
+        <div class="inputBox">
+          <label> Morada </label>
+          <input type="text" name="text_morada" placeholder="Digite a sua morada">
+        </div>
 
-            <!-- Cidade -->
-            <div class="my-3">
-                <label>Cidade</label>
-                <input type="text" name="text_cidade" placeholder="Cidade" class="form-control  form-control-lg" required>
-            </div>
+        <!-- Cidade  -->
+        <div class="inputBox">
+          <label> Cidade</label>
+          <input type="text" name="text_cidade" placeholder="Digite seu nome">
+        </div>
 
-            <!-- Telefone -->
-            <div class="my-3">
-                <label>Telefone</label>
-                <input type="text" name="text_telefone" placeholder="Telefone" class="form-control  form-control-lg">
-            </div>
+         <!--Cidade  -->
+         <div class="inputBox">
+           <label> Telefone </label>
+            <input type="text" name="text_telefone" placeholder="Digite seu telefone">
+         </div>
+      
+        <!-- Submit -->
+        <button type="submit" class="btn">Criar conta</button>
 
-            <!-- Submit -->
-            <div class="my-3">
-                <input type="submit" value="Criar conta" class="btn btn-primary">
-            </div>
-
-        </form>
-    </div>
+      </form>
+    </main>

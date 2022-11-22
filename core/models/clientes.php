@@ -4,6 +4,8 @@ namespace core\models;
 
 use core\classes\Database;
 use core\classes\Store;
+use core\classes\EnviarEmail;
+use Exception;
 
 class Clientes
 {
@@ -29,7 +31,8 @@ class Clientes
    //=======================================REGISTAR users====================================
    public function registar_cliente()
    {
-      //registao novo cliente na base de dados
+      // try {
+             //registao novo cliente na base de dados
       $bd = new Database();
 
       //cria uma hash para o registo do cliente
@@ -48,7 +51,7 @@ class Clientes
          ':activo' => 0,
       ];
 
-      $bd->insert("
+   $saved = $bd->insert("
     INSERT INTO users VALUES(
     0,
     :email,
@@ -61,11 +64,33 @@ class Clientes
     :activo,
     NOW(),
     NOW(),
+    NULL,
     NULL
     )
 
    ", $parametros);
-      //Retorna o purl criado
+
+      // if($saved == "" && $saved != null){
+      //    //Retorna o purl criado
+
+      //    // var_dump($saved);
+      //    return null;
+      // }else{
+      //    $email = new enviarEmail();
+         
+      //    $email->reportBug("Teste", $parametros);
+
+      //    return null;
+      // }
+      
+      // } catch (Exception $e) {
+         
+      //    $email = new enviarEmail();
+         
+      //    $email->reportBug($e, $parametros);
+         
+      //    return null;
+      // }
       return $purl;
    }
    //=======================================VALIDAÇÃO DO EMAIL COM PURL====================================
@@ -84,8 +109,6 @@ class Clientes
       
       //foi encontrado o id do cliente......
       $id_cliente = $resultados[0]->id_cliente;
-
-      // die(" id    " . $id_cliente);
       //Actualizar os dados do cliente......
       $parametros = [
          ':id_cliente' => $id_cliente
@@ -94,6 +117,105 @@ class Clientes
       return true;
    }
 
+   //=======================================Perfir update====================================
+   public function perfir_user_update()
+   {
+      $bd= new Database();
+
+      
+
+      // $parametros = [
+      //    ':nome_comple' => (trim($_POST['update_name'])),
+      //    ':morada' => (trim($_POST['update_morada'])),
+      //    ':cidade' => (trim($_POST['update_cidade'])),
+      //    ':telefone' => (trim($_POST['update_telefone'])),
+      //    // ':image' => (trim($_POST['update_profile'])),
+      //    ':id_cliente' => $id_cliente,
+      // ];
+         
+         $nome_comple=(trim($_POST['update_name']));
+         $morada=(trim($_POST['update_morada']));
+         $cidade=(trim($_POST['update_cidade']));
+         $telefone=(trim($_POST['update_telefone']));
+         $id_cliente = $_SESSION['cliente'];
+
+      if(!empty($_POST['update_name'])){
+
+         $saved= $bd->update("UPDATE users SET 
+         nome_comple=$nome_comple,
+         updated_at=NOW()
+         WHERE id_cliente=:id_cliente"
+          );
+      }elseif(!empty($morada)){
+         $saved= $bd->update("UPDATE users SET 
+         morada=$morada,
+         updated_at=NOW()
+         WHERE id_cliente=:id_cliente"
+          );
+      }elseif(!empty($cidade)){
+         $saved= $bd->update("UPDATE users SET 
+         cidade=$cidade,
+         updated_at=NOW()
+         WHERE id_cliente=:id_cliente"
+          );
+      }elseif(!empty($telefone)){
+         $saved= $bd->update("UPDATE users SET 
+         telefone=$telefone,
+         updated_at=NOW()
+         WHERE id_cliente=:id_cliente"
+          );
+      }else{
+         $_SESSION['erro'] = "error updating";
+      }
+
+   
+
+      $old_pass=$_SESSION['old_password'];
+      $update_pass=trim($_POST['update_pass']);
+  
+      
+      if($update_pass != null){
+         $verified= password_verify($update_pass, $old_pass);
+         if(!$verified){
+            $_SESSION['erro']="Old password does not march";
+            Store::redirect('perfil');
+         }else{
+            Store::redirect('perfil');
+         }
+      }
+
+      
+      $new_password = password_hash(trim($_POST['new_pass']), PASSWORD_DEFAULT);
+      $confirm_password =trim($_POST['confirm_pass']);
+
+      $parametros=[
+         ':new_password'=> $new_password,
+      ];
+
+      
+
+      if(!empty($new_password) && $new_password!=null){
+         $verified_newPassword = password_verify($confirm_password, $new_password);
+         if(!$verified_newPassword){
+            $_SESSION['erro']= "new password does not match";
+            Store::redirect('perfil');
+         }else{
+            $bd->update("
+               UPDATE
+               users
+               SET
+               senha =:new_password,
+               updated_at =NOW() WHERE id_cliente=:id_cliente
+
+            ",$parametros);
+         } 
+      }
+      
+      Store::redirect("perfil");
+
+
+   }
+   //=======================================VALIDAÇÃO DO Login====================================
    public function validar_login($usuario, $senha){
       //verifica se o login é valido!
 

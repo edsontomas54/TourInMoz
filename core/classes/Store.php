@@ -35,6 +35,14 @@ class Store{
  
     }
 
+    public static function LoggedAdminUser(){
+        
+        //verifica se existe um cliente com sessao/Logado
+        return (isset($_SESSION['admin']));
+
+ 
+    }
+
     //====================Hash=========================================================
 
     public static function criarHash($num_caracteres=12){
