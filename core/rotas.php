@@ -35,6 +35,10 @@ $rotas=[
     'edit_admin' => 'AdminUsersController@edit_admin',
     'update_admin' => 'AdminUsersController@update_admin',
 
+    //adventure routes
+    'adventure' => 'main@adventure',
+
+
 ];
 
 //Define acão por defeito/default

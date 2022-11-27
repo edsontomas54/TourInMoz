@@ -12,7 +12,7 @@ use core\models\produtos;
 class Main
 {
     //==============================================================
-    public function index()
+    public  function index()
     {
         //chamando as paginas! como usamos o static podemos acessar directamente
         Store::Layout([
@@ -379,6 +379,15 @@ class Main
      
     }
 
+        public function adventure(){
+            Store::Layout([
+                'layouts/html_header',
+                'layouts/header',
+                'adventure',
+                'layouts/footer',
+                'layouts/html_footer'
+             ]);
+        }
     //==============================================================Carinho
     public function carrinho()
     {

@@ -14,13 +14,17 @@ class AdminUsersController
 
     public function admin()
     {
+      if(Store::clienteLogado()){
+        Store::redirect('inicio');
+      }      
+
       if(!Store::LoggedAdminUser()){
         Store::redirect('login_admin');
-      }      
+      }
       $roleAdmin = $_SESSION['role_type'];
 
-    //   if($roleAdmin !='admin'){
-    //     Store::redirect('admin_regist');
+    //   if($roleAdmin !='/^admin/i'){
+    //      Store::redirect('admin_regist');
     //   }
         Store::Layout([
          
@@ -275,6 +279,7 @@ class AdminUsersController
 
         $db = new Database();
         $id_admin = $_SESSION['admin'];
+        // $id_admin = $_GET['id_admin'];
 
         $paramets=[
             ':nome_admin'=> trim($_POST['update_nomeAdmin']),
@@ -283,8 +288,9 @@ class AdminUsersController
             ':role_type'=> trim($_POST['update_role_type']), 
             ':id_admin' => $id_admin,
         ];
+       
         // $db->update("UPDATE users SET purl=NULL, activo='1', updated_at=NOW() WHERE id_cliente=:id_cliente", $parametros);
-        $db->update("
+       $admin_updated= $db->update("
 
             UPDATE
             admin_users
@@ -298,14 +304,20 @@ class AdminUsersController
             id_admin=:id_admin
 
         ", $paramets);
+        
+        if($admin_updated){
+            $_SESSION['sucess']="updated";
+          return  Store::redirect("edit_admin");
 
-        Store::redirect("edit_admin");
-
+        }else {
+            $_SESSION['erro']="error";
+            return Store::redirect("edit_admin");
+        } 
     }
 
     public function delete_admin_user(){
         $db = new Database();
-        $id_admin = $_SESSION['admin'];
+        $id_admin = $_GET['id_admin'];
 
         $paramets=[
             ':nome_admin'=> trim($_POST['update_nomeAdmin']),

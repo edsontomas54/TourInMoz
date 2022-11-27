@@ -54,10 +54,12 @@
 
     <div class="box-container-services">
 
-        <div class="box-services">
-            <img src="assets/images/icon-1.png" alt="">
-            <h3>Aventura</h3>
-        </div>
+        <a href="?a=adventure" style="text-decoration: none;" >
+            <div class="box-services">
+                <img src="assets/images/icon-1.png" alt="">
+                <h3>Aventura</h3>
+            </div>
+        </a>
 
         <div class="box-services">
             <img src="assets/images/icon-2.png" alt="">
