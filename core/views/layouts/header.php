@@ -1,6 +1,5 @@
 <?php
 use core\classes\Store;
-use core\controllers\Main;
 
 $shop =$_GET['a'];
 //teste! se o cliente estiver logado  forçando a existeça do cliente $_SESSION['cliente']=1;
