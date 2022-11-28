@@ -1,4 +1,4 @@
-<div class="container"></div>
+
 <div class="row my-5">
     <div class="col-sm-6 offset-sm-3">
         <h3 class="text-center"> Conta criada com sucesso!</h3>
